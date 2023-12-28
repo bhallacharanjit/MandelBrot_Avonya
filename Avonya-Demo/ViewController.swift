@@ -64,7 +64,13 @@ class ViewController: UIViewController {
         }
     }
 
-    // create Mandelbrot
+    //@comment  create Mandelbrot
+
+    /// Checking the escape time with the method
+    /// - Parameters:
+    ///   - x: Double value of the x
+    ///   - y: Double value of the y
+    /// - Returns: returns an Integer to get the iteration
     public func mandelbrotEscapeTime(_ x: Double, _ y: Double) -> Int {
         var zx = 0.0
         var zy = 0.0
@@ -80,6 +86,9 @@ class ViewController: UIViewController {
         return iteration
     }
 
+
+    /// This method creates the mandelbrot image with the specified width heigh and scale
+    /// - Returns: returns an UIImage to show the render. It could be null as well.
     func createMandelbrotImage() -> UIImage? {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: Int(mandleBrotImageContainer.frame.size.width), height: Int(mandleBrotImageContainer.frame.size.height)))
 
@@ -102,6 +111,8 @@ class ViewController: UIViewController {
         return image
     }
 
+
+    /// Updating the mandelbrot image
     func updateMandlbrotImage() {
         print(scale)
         for subview in view.subviews {
